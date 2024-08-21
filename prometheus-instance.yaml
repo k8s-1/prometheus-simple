@@ -4,7 +4,12 @@ metadata:
   name: prometheus
 spec:
   serviceAccountName: prometheus
+  # OPTION 1 - select pods
   podMonitorSelector:
+    matchLabels:
+      team: frontend
+  # OPTION 2 - select svc
+  serviceMonitorSelector:
     matchLabels:
       team: frontend
   resources:

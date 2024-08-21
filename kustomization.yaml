@@ -1,0 +1,8 @@
+resources:
+- prometheus_operator.yaml # using prometheus operator reduces technical overhead
+- prometheus_rbac.yaml # prometheus needs access to k8s api
+- prometheus_instance.yaml # operator crd for prometheus instance
+- service_monitor.yaml # operator crd for monitoring services
+- grafana.yaml # grafana visualization deployment
+- grafana_svc.yaml # create grafana svc
+- expose_prometheus.yaml # expose nodePort

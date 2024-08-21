@@ -36,3 +36,5 @@ kubeEtcd:
   service:
     targetPort: 2381
 EOF
+
+kubectl -n monitoring port-forward svc/prometheus-operated 9090:9090

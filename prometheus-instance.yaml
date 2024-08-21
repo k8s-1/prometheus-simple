@@ -9,9 +9,9 @@ spec:
     matchLabels:
       team: frontend
   # OPTION 2 - select svc
-  serviceMonitorSelector:
-    matchLabels:
-      team: frontend
+  # serviceMonitorSelector:
+  #   matchLabels:
+  #     team: frontend
   resources:
     requests:
       memory: 400Mi

@@ -3,4 +3,4 @@
 * Requires RBAC prometheus user to talk to API server
 
 # Simple & quick monitoring
-* Good for setting up a quick and dirty monitoring solution
+* Good for setting up a quick monitoring solution

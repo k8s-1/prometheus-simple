@@ -1,5 +1,5 @@
 resources:
-- bundle.yaml # using prometheus operator reduces technical overhead
+# - bundle.yaml # create bundle separately first
 - rbac.yaml # prometheus needs access to k8s api
 - example-app/
 - example-svc-monitor.yaml # operator crd for prometheus instance

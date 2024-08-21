@@ -6,7 +6,6 @@ metadata:
     team: frontend
 spec:
   selector:
-    matchLabels:
-      app: example-app
+    matchLabels: {}
   podMetricsEndpoints:
   - port: web

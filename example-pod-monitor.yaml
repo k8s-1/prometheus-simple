@@ -8,4 +8,4 @@ spec:
   selector:
     matchLabels: {}
   podMetricsEndpoints:
-  - port: web
+  - port: metrics

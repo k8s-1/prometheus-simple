@@ -8,4 +8,4 @@ spec:
   selector:
     matchLabels: {}
   endpoints:
-  - port: web
+  - port: metrics

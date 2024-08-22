@@ -11,8 +11,13 @@ spec:
     name: tomahawk
     resources: {}
     ports:
-    - name: metrics
-      containerPort: 8080
+  - name: nginx-exporter
+    image: nginx/nginx-prometheus-exporter:latest  # Sidecar container for metrics
+    args: 
+    - -nginx.scrape-uri=http://127.0.0.1:80/stub_status  # Adjust based on your setup
+    ports:
+    - containerPort: 9113  # Exporter port for metrics
+      name: metrics-port
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}

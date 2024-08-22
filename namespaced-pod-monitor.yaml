@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: example-app
+  namespace: myns
+  labels:
+    team: frontend
+spec:
+  selector:
+    matchLabels: {}
+  podMetricsEndpoints:
+  - port: metrics-port

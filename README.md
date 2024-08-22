@@ -5,6 +5,8 @@
 
 # Simple & quick monitoring
 * Good for setting up a quick monitoring solution
+* Additional resources are required e.g. kube-state-metrics to actually enable
+prometheus to scrape the monitoring data
 
 # Install
 

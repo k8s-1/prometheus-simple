@@ -2,3 +2,4 @@ resources:
   - deploy.yaml
   - svc.yaml
   - pod.yaml
+  - pod-ns.yaml

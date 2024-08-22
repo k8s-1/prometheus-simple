@@ -1,7 +1,7 @@
 #!/bin/bash
-kubectl apply -f bundle.yaml --server-side
+kubectl apply --server-side -f bundle.yaml
 
-kustomize build . | kubectl create -f -
+kustomize build . | kubectl apply --server-side -f -
 
 kubectl port-forward svc/prometheus-k8s 9090:9090 > /dev/null 2>&1 &
 

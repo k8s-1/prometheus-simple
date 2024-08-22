@@ -22,6 +22,9 @@ curl -sL https://github.com/prometheus-operator/prometheus-operator/releases/dow
 * prometheus-instance.yaml includes a prometheus instance for prometheus operator to setup
 * example-pod|svc-monitor.yaml is picked up by the prometheus instance, it's a CRD that defines a resource group to be monitored
     * instance and monitor CRD need matching labels
-    * monitor CRD requires resources deployments/pods to expose a metric endpoint, name needs to match with what is defined in CRD
+    * monitor CRD requires resources deployments/pods to expose a metric endpoint, name needs to match with what is defined in CRD, sometimes a container doesn't have a metrics port and needs a sidecar -> see pod nginx example for sidecar implementation
+    CRD >>>
     podMetricsEndpoints:
       - port: metrics-port
+    container spec >>>
+

@@ -14,7 +14,7 @@ kubectl apply --server-side -f bundle.yaml
 
 kustomize build . | kubectl apply --server-side -f -
 
-sleep 20
+sleep 60
 
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=prometheus --timeout 300s
 

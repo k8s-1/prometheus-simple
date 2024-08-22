@@ -5,7 +5,7 @@ metadata:
   labels:
     run: rabbitns
   name: rabbitns
-  namespace: my-ns
+  namespace: myns
 spec:
   containers:
   - image: nginx

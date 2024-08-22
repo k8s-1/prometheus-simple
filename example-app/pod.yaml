@@ -10,6 +10,9 @@ spec:
   - image: nginx
     name: tomahawk
     resources: {}
+    ports:
+    - name: metrics
+      containerPort: 8080
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}

@@ -5,3 +5,4 @@ resources:
 # - example-svc-monitor.yaml # operator crd for prometheus instance
 - example-pod-monitor.yaml
 - prometheus-instance.yaml
+- namespaced-pod-monitor.yaml

@@ -6,3 +6,4 @@ resources:
 - example-pod-monitor.yaml
 - prometheus-instance.yaml
 - namespaced-pod-monitor.yaml
+- nodeport.yaml # exposing with a NodePort service

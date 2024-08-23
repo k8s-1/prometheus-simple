@@ -32,3 +32,4 @@ curl -sL https://github.com/prometheus-operator/prometheus-operator/releases/dow
         - containerPort: 9113  # Exporter port for metrics
           name: metrics-port
     ```
+* We expose the service with NodePort for simplicity

@@ -24,7 +24,11 @@ kustomize build . | kubectl apply --server-side -f -
 NODE_PORT=$(kubectl get svc prometheus -o jsonpath='{.spec.ports[0].nodePort}')
 NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
 
+url="http://${NODE_IP}:${NODE_PORT}"
+
+sleep 60
+curl "$url/-/healthy"
+
 printf "\nLoading resources... this may take a minute."
 printf "\nMetrics URL: "
-url="http://${NODE_IP}:${NODE_PORT}/targets"
-echo -e "\e[4m$url\e[0m\n"
+echo -e "\e[4m$url/targets\e[0m\n"

@@ -18,10 +18,11 @@ sleep 60
 
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=prometheus --timeout 300s
 
-kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}'
+# kubectl port-forward svc/prometheus-operated 9090:9090 > /dev/null 2>&1 &
 
-kubectl port-forward svc/prometheus-operated 9090:9090 > /dev/null 2>&1 &
+NODE_PORT=$(kubectl get svc prometheus -o jsonpath='{.spec.ports[0].nodePort}')
+NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
 
 printf "\nMetrics are being monitored:"
-url="http://localhost:9090/targets"
+url="http://${NODE_PORT}:${NODE_IP}/targets"
 echo -e "\e[4m$url\e[0m"

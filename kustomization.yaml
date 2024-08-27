@@ -1,5 +1,6 @@
 resources:
 # - bundle.yaml # create bundle separately first
+- cm.yaml
 - rbac.yaml # prometheus needs access to k8s api
 - example-app/
 # - example-svc-monitor.yaml # operator crd for prometheus instance

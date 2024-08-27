@@ -17,3 +17,5 @@ spec:
       memory: 400Mi
   enableAdminAPI: false
   podMonitorNamespaceSelector: {}
+  configMaps:
+    - console-template

@@ -1,13 +1,13 @@
 apiVersion: v1
 data:
-  console.html: |
+  test.html: |
     {{ template "head" . }}
 
     {{ template "prom_right_table_head" }}
     {{ template "prom_right_table_tail" }}
 
     {{ template "prom_content_head" . }}
-    <h1>Overview</h1>
+    <h1>TEST CONSOLE</h1>
     <p>These are example consoles for Prometheus.</p>
 
     <p>These consoles expect exporters to have the following job labels:</p>

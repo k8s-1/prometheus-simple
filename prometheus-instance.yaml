@@ -18,7 +18,7 @@ spec:
   enableAdminAPI: false
   podMonitorNamespaceSelector: {}
   configMaps: # The ConfigMaps are mounted into /etc/prometheus/configmaps/<configmap-name> in the 'prometheus' container.
-    - console-template
-  # additionalArgs:
-  #   - name: "web.console.templates"
-  #     value: "/etc/prometheus/configmaps/console-template"
+    - consoles
+  additionalArgs:
+    - name: "web.console.templates"
+      value: "/etc/prometheus/configmaps/consoles"

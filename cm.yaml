@@ -31,4 +31,4 @@ data:
     {{ template "tail" }}
 kind: ConfigMap
 metadata:
-  name: console-template
+  name: consoles

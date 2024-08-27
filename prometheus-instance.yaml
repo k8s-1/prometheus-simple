@@ -20,6 +20,6 @@ spec:
   configMaps: # The ConfigMaps are mounted into /etc/prometheus/configmaps/<configmap-name> in the 'prometheus' container.
     - consoles
   # broken
-  additionalArgs:
-    - name: "web.console.templates"
-      value: "/etc/prometheus/configmaps/consoles/"
+  # additionalArgs:
+  #   - name: "web.console.templates"
+  #     value: "/etc/prometheus/configmaps/consoles/"

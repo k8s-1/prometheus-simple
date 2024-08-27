@@ -20,7 +20,7 @@ spec:
   configMaps: # The ConfigMaps are mounted into /etc/prometheus/configmaps/<configmap-name> in the 'prometheus' container.
     - consoles
   additionalArgs:
-    # - name: "web.console.templates"
-    #   value: "/etc/prometheus/configmaps/consoles"
+    - name: "web.console.templates"
+      value: "/etc/prometheus/configmaps/consoles/"
     - name: web.page-title
       value: crunches

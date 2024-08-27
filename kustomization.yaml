@@ -1,10 +1,10 @@
 resources:
-# - bundle.yaml # create bundle separately first
+  # - bundle.yaml # create bundle separately first
 - cm.yaml
 - rbac.yaml # prometheus needs access to k8s api
-- example-app/
-# - example-svc-monitor.yaml # operator crd for prometheus instance
-- example-pod-monitor.yaml
+# - example-app/
+  # - example-svc-monitor.yaml # operator crd for prometheus instance
+# - example-pod-monitor.yaml
 - prometheus-instance.yaml
-- namespaced-pod-monitor.yaml
+# - namespaced-pod-monitor.yaml
 - nodeport.yaml # exposing with a NodePort service

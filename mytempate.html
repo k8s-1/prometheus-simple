@@ -1,0 +1,7 @@
+{{template "head" .}}
+{{template "prom_content_head" .}}
+<h1>LimeDrop Web Server Metrics</h1>
+
+<strong>Server Status:</strong> {{ template "prom_query_drilldown" (args "up{job='Web Server'}") }}
+{{template "prom_content_tail" .}}
+{{template "tail"}}

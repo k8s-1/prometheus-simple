@@ -1,0 +1,3 @@
+- configure grafana data source
+- configure grafana dashboard
+- configure grafana userless login

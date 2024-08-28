@@ -18,7 +18,7 @@ data:
     <div class="graph-container" style="margin-bottom: 40px;">
         <iframe 
             src="/graph?g0.expr=process_virtual_memory_bytes%7Bpod%3D%22rabbitns%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=2h" 
-            style="border: none; width: 100%; height: 400px;">
+            style="border: none; width: 100%; height: 50%">
         </iframe>
     </div>
 

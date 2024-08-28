@@ -1,28 +1,52 @@
-{{ template "head" . }}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pod Resource Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .graph-container {
+            margin-bottom: 40px;
+        }
+        .graph {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
 
-{{ template "prom_right_table_head" }}
-{{ template "prom_right_table_tail" }}
+    <h1>Pod Resource Usage</h1>
 
-{{ template "prom_content_head" . }}
-<h1>Overview</h1>
-<p>These are example consoles for Prometheus.</p>
+    <div class="graph-container">
+        <h2>Memory Usage Over Time</h2>
+        <div class="graph">
+            <iframe 
+                src="/graph?g0.expr=container_memory_usage_bytes%7Bpod%3D%22tomahawk%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=1h" 
+                frameborder="0" 
+                width="100%" 
+                height="300">
+            </iframe>
+        </div>
+    </div>
 
-<p>These consoles expect exporters to have the following job labels:</p>
-<table class="table table-sm table-striped table-bordered" style="width: 0%">
-<tr>
-  <th>Exporter</th>
-  <th>Job label</th>
-</tr>
-<tr>
-  <td>Node Exporter</td>
-  <td><code>node</code></td>
-</tr>
-<tr>
-  <td>Prometheus</td>
-  <td><code>prometheus</code></td>
-</tr>
-</table>
+    <div class="graph-container">
+        <h2>CPU Usage Over Time</h2>
+        <div class="graph">
+            <iframe 
+                src="/graph?g0.expr=rate(container_cpu_usage_seconds_total%7Bpod%3D%22tomahawk%22%7D%5B5m%5D)&g0.tab=0&g0.stacked=0&g0.range_input=1h" 
+                frameborder="0" 
+                width="100%" 
+                height="300">
+            </iframe>
+        </div>
+    </div>
 
-{{ template "prom_content_tail" . }}
-
-{{ template "tail" }}
+</body>
+</html>

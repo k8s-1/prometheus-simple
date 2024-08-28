@@ -32,3 +32,6 @@ curl "$url/-/healthy"
 printf "\nLoading resources... this may take a minute."
 printf "\nMetrics URL: "
 echo -e "\e[4m$url/targets\e[0m\n"
+
+printf "\nConsole Templates URL: "
+echo -e "\e[4m$url/consoles/test.html\e[0m\n"

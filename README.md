@@ -33,3 +33,8 @@ curl -sL https://github.com/prometheus-operator/prometheus-operator/releases/dow
           name: metrics-port
     ```
 * We expose the service with NodePort for simplicity
+
+# Console templates
+* Console templates are volume mounted with strategic merge patch into the prometheus instance
+https://prometheus-operator.dev/docs/platform/strategic-merge-patch/
+https://github.com/prometheus-operator/prometheus-operator/issues/6880

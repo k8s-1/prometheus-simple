@@ -16,10 +16,8 @@ data:
     <!-- Memory Usage Over Time -->
     <h2>Memory Usage Over Time</h2>
     <div class="graph-container" style="margin-bottom: 40px;">
-        <iframe 
-            src="/graph?g0.expr=process_virtual_memory_bytes%7Bpod%3D%22rabbitns%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=2h" 
-            style="border: none; width: 100%; height: 100px">
-        </iframe>
+      src="/graph?g0.expr=process_virtual_memory_bytes%7Bpod%3D%22rabbitns%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=2h" 
+      style="border: none; width: 100%; height: 100px">
     </div>
 
     {{template "prom_content_tail" .}}

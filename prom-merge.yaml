@@ -1,9 +1,0 @@
-
-apiVersion: monitoring.coreos.com/v1
-kind: Prometheus
-metadata:
-  name: overwrite-console-dir
-spec:
-  containers:
-  - args:
-    - --web.console.templates=/etc/prometheus/configmaps/consoles/

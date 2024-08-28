@@ -1,58 +1,19 @@
 apiVersion: v1
 data:
   test.html: |
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Pod Resource Usage</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                padding: 20px;
-            }
-            h1 {
-                color: #333;
-            }
-            .graph-container {
-                margin-bottom: 40px;
-            }
-            .graph {
-                width: 100%;
-                height: 300px;
-                border: 1px solid #ccc;
-            }
-        </style>
-    </head>
-    <body>
+    {{template "head" .}}
+    {{template "prom_content_head" .}}
+    <h1>LimeDrop Web Server Metrics</h1>
 
-        <h1>Pod Resource Usage</h1>
-
-        <div class="graph-container">
-            <h2>Memory Usage Over Time</h2>
-            <div class="graph">
-                <iframe 
-                    src="/graph?g0.expr=container_memory_usage_bytes%7Bpod%3D%22tomahawk%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=1h" 
-                    frameborder="0" 
-                    width="100%" 
-                    height="300">
-                </iframe>
-            </div>
-        </div>
-
-        <div class="graph-container">
-            <h2>CPU Usage Over Time</h2>
-            <div class="graph">
-                <iframe 
-                    src="/graph?g0.expr=rate(container_cpu_usage_seconds_total%7Bpod%3D%22tomahawk%22%7D%5B5m%5D)&g0.tab=0&g0.stacked=0&g0.range_input=1h" 
-                    frameborder="0" 
-                    width="100%" 
-                    height="300">
-                </iframe>
-            </div>
-        </div>
-
-        </body>
-      </html>
+    <strong>Server Status:</strong> {{ template "prom_query_drilldown" (args "up{job='Web Server'}") }}
+    <br />
+    <br />
+    <strong>Current CPU Usage:</strong> {{ template "prom_query_drilldown" (args "sum(rate(node_cpu_seconds_total{instance='limedrop-web:9100',mode!='idle'}[5m])) * 100 / 2" "%") }}
+    <br />
+    <br />
+    <strong>Current Memory Usage:</strong> {{ template "prom_query_drilldown" (args "100 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100" "%") }}
+    {{template "prom_content_tail" .}}
+    {{template "tail"}}
 kind: ConfigMap
 metadata:
   name: consoles

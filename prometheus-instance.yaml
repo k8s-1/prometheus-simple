@@ -9,10 +9,6 @@ spec:
   podMonitorSelector: {}
   probeNamespaceSelector: {}
   probeSelector: {}
-  replicas: 2
-  resources:
-    requests:
-      memory: 400Mi
   ruleNamespaceSelector: {}
   ruleSelector: {}
   scrapeConfigNamespaceSelector: {}
@@ -21,7 +17,6 @@ spec:
     fsGroup: 2000
     runAsNonRoot: true
     runAsUser: 1000
-  serviceAccountName: prometheus
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
 

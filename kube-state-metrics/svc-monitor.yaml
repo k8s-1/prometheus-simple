@@ -2,12 +2,12 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
-    app: kube-state-metrics
+    app.kubernetes.io/name: kube-state-metrics
   name: kube-state-metrics
 spec:
   selector:
     matchLabels:
-      app: kube-state-metrics
+      app.kubernetes.io/name: kube-state-metrics
   endpoints:
   - port: http-metrics
   - port: telemetry

@@ -4,15 +4,27 @@ metadata:
   name: prometheus
 spec:
   serviceAccountName: prometheus
-  # OPTION 1 - select pods
-  podMonitorSelector:
-    matchLabels:
-      team: frontend
-  # OPTION 2 - select svc
-  serviceMonitorSelector:
-    matchLabels:
-      team: frontend
-      app.kubernetes.io/name: kube-state-metrics
+
+  podMonitorNamespaceSelector: {}
+  podMonitorSelector: {}
+  probeNamespaceSelector: {}
+  probeSelector: {}
+  replicas: 2
+  resources:
+    requests:
+      memory: 400Mi
+  ruleNamespaceSelector: {}
+  ruleSelector: {}
+  scrapeConfigNamespaceSelector: {}
+  scrapeConfigSelector: {}
+  securityContext:
+    fsGroup: 2000
+    runAsNonRoot: true
+    runAsUser: 1000
+  serviceAccountName: prometheus
+  serviceMonitorNamespaceSelector: {}
+  serviceMonitorSelector: {}
+
   resources:
     requests:
       memory: 400Mi
@@ -25,3 +37,24 @@ spec:
     volumeMounts:
     - mountPath: /etc/prometheus/consoles
       name: configmap-consoles
+
+  # podMonitorNamespaceSelector: {}
+  # podMonitorSelector: {}
+  # probeNamespaceSelector: {}
+  # probeSelector: {}
+  # replicas: 2
+  # resources:
+  #   requests:
+  #     memory: 400Mi
+  # ruleNamespaceSelector: {}
+  # ruleSelector: {}
+  # scrapeConfigNamespaceSelector: {}
+  # scrapeConfigSelector: {}
+  # securityContext:
+  #   fsGroup: 2000
+  #   runAsNonRoot: true
+  #   runAsUser: 1000
+  # serviceAccountName: prometheus-k8s
+  # serviceMonitorNamespaceSelector: {}
+  # serviceMonitorSelector: {}
+  # version: 2.54.0

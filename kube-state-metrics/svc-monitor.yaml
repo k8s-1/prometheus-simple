@@ -9,5 +9,5 @@ spec:
     matchLabels:
       app: kube-state-metrics
   endpoints:
-  - port: http-main
-  - port: http-self
+  - port: http-metrics
+  - port: telemetry

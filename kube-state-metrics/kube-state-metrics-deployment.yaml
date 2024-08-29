@@ -12,13 +12,8 @@ spec:
       app: kube-state-metrics
   template:
     metadata:
-      annotations:
-        kubectl.kubernetes.io/default-container: kube-state-metrics
       labels:
-        app.kubernetes.io/component: exporter
-        app.kubernetes.io/name: kube-state-metrics
-        app.kubernetes.io/part-of: kube-prometheus
-        app.kubernetes.io/version: 2.13.0
+        app: kube-state-metrics
     spec:
       automountServiceAccountToken: true
       containers:

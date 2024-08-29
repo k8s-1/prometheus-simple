@@ -24,7 +24,6 @@ spec:
     requests:
       memory: 400Mi
   enableAdminAPI: false
-  podMonitorNamespaceSelector: {}
   configMaps: # The ConfigMaps are mounted into /etc/prometheus/configmaps/<configmap-name> in the 'prometheus' container.
     - consoles
   containers: # strategic merge patch the destination of the configMap mountPath to the default console template path

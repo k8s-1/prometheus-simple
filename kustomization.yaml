@@ -9,3 +9,4 @@ resources:
 - namespaced-pod-monitor.yaml
 - nodeport.yaml # exposing with a NodePort service
 - grafana/
+- kube-state-metrics/

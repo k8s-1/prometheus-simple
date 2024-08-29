@@ -48,12 +48,12 @@ spec:
         - mountPath: /etc/grafana/provisioning/datasources
           name: grafana-datasources
           readOnly: false
-        - mountPath: /etc/grafana/provisioning/dashboards
-          name: grafana-dashboards
-          readOnly: false
-        - mountPath: /tmp
-          name: tmp-plugins
-          readOnly: false
+        # - mountPath: /etc/grafana/provisioning/dashboards
+        #   name: grafana-dashboards
+        #   readOnly: false
+        # - mountPath: /tmp
+        #   name: tmp-plugins
+        #   readOnly: false
       securityContext:
         fsGroup: 65534
         runAsGroup: 65534
@@ -66,9 +66,9 @@ spec:
       - name: grafana-datasources
         secret:
           secretName: grafana-datasources
-      - configMap:
-          name: grafana-dashboards
-        name: grafana-dashboards
-      - emptyDir:
-          medium: Memory
-        name: tmp-plugins
+      # - configMap:
+      #     name: grafana-dashboards
+      #   name: grafana-dashboards
+      # - emptyDir:
+      #     medium: Memory
+      #   name: tmp-plugins

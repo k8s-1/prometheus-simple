@@ -7,6 +7,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: example-app
+      app.kubernetes.io/name: kube-state-metrics
   endpoints:
   - port: web

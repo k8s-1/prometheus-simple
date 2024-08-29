@@ -10,4 +10,5 @@ spec:
     matchLabels:
       app: kube-state-metrics
   endpoints:
-  - port: https-main
+  - port: http-main
+  - port: http-self

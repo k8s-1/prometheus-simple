@@ -5,7 +5,7 @@ metadata:
     app.kubernetes.io/component: exporter
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/part-of: prometheus
-    app.kubernetes.io/version: 2.13.0
+    team: frontend
   name: kube-state-metrics
   namespace: default
 spec:

@@ -2,9 +2,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   labels:
-    app: kube-state-metrics
+    app.kubernetes.io/component: exporter
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/part-of: kube-prometheus
+    app.kubernetes.io/version: 2.13.0
   name: kube-state-metrics
-  namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -12,3 +14,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: kube-state-metrics
+  namespace: default

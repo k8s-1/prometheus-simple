@@ -2,17 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: kube-state-metrics
+    app.kubernetes.io/component: exporter
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/part-of: kube-prometheus
+    app.kubernetes.io/version: 2.13.0
   name: kube-state-metrics
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kube-state-metrics
+      app.kubernetes.io/component: exporter
+      app.kubernetes.io/name: kube-state-metrics
+      app.kubernetes.io/part-of: kube-prometheus
   template:
     metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: kube-state-metrics
       labels:
-        app: kube-state-metrics
+        app.kubernetes.io/component: exporter
+        app.kubernetes.io/name: kube-state-metrics
+        app.kubernetes.io/part-of: kube-prometheus
+        app.kubernetes.io/version: 2.13.0
     spec:
       automountServiceAccountToken: true
       containers:

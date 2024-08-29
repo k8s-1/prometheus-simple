@@ -1,9 +1,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: kube-state-metrics
   labels:
     team: frontend
+  name: kube-state-metrics
 spec:
   selector:
     matchLabels:

@@ -2,6 +2,7 @@ resources:
   # - bundle.yaml # create bundle separately first
 - cm.yaml
 - rbac.yaml # prometheus needs access to k8s api
+- kubelet-svc-monitor.yaml
 - example-app/
 # - svc-app/
 - kube-state-metrics/

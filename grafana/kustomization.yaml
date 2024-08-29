@@ -8,6 +8,6 @@ resources:
 - grafana-datasources.yaml
 - grafana-deployment.yaml
 # - grafana-prometheusRule.yaml
-# - grafana-service.yaml
-# - grafana-serviceAccount.yaml
+- grafana-service.yaml
+- grafana-serviceAccount.yaml
 # - grafana-serviceMonitor.yaml

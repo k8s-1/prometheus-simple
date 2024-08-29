@@ -3,7 +3,7 @@ resources:
 - cm.yaml
 - rbac.yaml # prometheus needs access to k8s api
 # - example-app/
-- svc-app/
+# - svc-app/
 - kube-state-metrics/
   # - example-svc-monitor.yaml # operator crd for prometheus instance
 # - example-pod-monitor.yaml

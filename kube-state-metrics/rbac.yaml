@@ -43,8 +43,3 @@ subjects:
 - kind: ServiceAccount
   name: kube-state-metrics
   namespace: default
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: kube-state-metrics

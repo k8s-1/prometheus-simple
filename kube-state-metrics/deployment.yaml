@@ -2,35 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/component: exporter
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/part-of: prometheus
-    app.kubernetes.io/version: 2.13.0
+    app: kube-state-metrics
   name: kube-state-metrics
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/component: exporter
-      app.kubernetes.io/name: kube-state-metrics
-      app.kubernetes.io/part-of: kube-prometheus
+      app: kube-state-metrics
   template:
     metadata:
-      annotations:
-        kubectl.kubernetes.io/default-container: kube-state-metrics
       labels:
-        app.kubernetes.io/component: exporter
-        app.kubernetes.io/name: kube-state-metrics
-        app.kubernetes.io/part-of: kube-prometheus
-        app.kubernetes.io/version: 2.13.0
+        app: kube-state-metrics
     spec:
       automountServiceAccountToken: true
       containers:
       - args:
         - --host=127.0.0.1
         - --port=8081
-        - --telemetry-host=127.0.0.1
-        - --telemetry-port=8082
         image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.13.0
         name: kube-state-metrics
         resources:
@@ -105,6 +93,4 @@ spec:
           runAsUser: 65532
           seccompProfile:
             type: RuntimeDefault
-      nodeSelector:
-        kubernetes.io/os: linux
       serviceAccountName: kube-state-metrics

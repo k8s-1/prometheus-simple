@@ -8,4 +8,4 @@ resources:
 - prometheus-instance.yaml
 - namespaced-pod-monitor.yaml
 - nodeport.yaml # exposing with a NodePort service
-# - grafana/
+- grafana/

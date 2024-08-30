@@ -5,10 +5,10 @@ resources:
 - kubelet-svc-monitor.yaml
 - example-app/
 # - svc-app/
-- kube-state-metrics/
+# - kube-state-metrics/
   # - example-svc-monitor.yaml # operator crd for prometheus instance
 - example-pod-monitor.yaml
 - prometheus-instance.yaml
 # - namespaced-pod-monitor.yaml
 - nodeport.yaml # exposing with a NodePort service
-# - grafana/
+- grafana/

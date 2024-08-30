@@ -13,15 +13,12 @@ stringData:
     enabled = true
 
     # Organization name that should be used for unauthenticated users
-    org_name = Testname
+    org_name = Main Org.
 
     # Role for unauthenticated users, other valid values are `Editor` and `Admin`
     org_role = Viewer
 
-    [auth.basic]
-    enabled = false
-
-    [auth]
-    disable_login_form = true
+    # Hide the Grafana version text from the footer and help tooltip for unauthenticated users (default: false)
+    hide_version = true
 
 type: Opaque

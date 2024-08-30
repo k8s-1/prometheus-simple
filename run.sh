@@ -29,7 +29,7 @@ url="http://${NODE_IP}:${NODE_PORT}"
 sleep 60
 curl "$url/-/healthy"
 
-printf "\nLoading resources... this may take a minute."
+printf "\nLoading resources... this may take a minute.\n\n\n"
 printf "\nMetrics URL: "
 echo -e "\e[4m$url/targets\e[0m\n"
 

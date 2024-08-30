@@ -18,4 +18,10 @@ stringData:
     # Role for unauthenticated users, other valid values are `Editor` and `Admin`
     org_role = Viewer
 
+    [auth.basic]
+    enabled = false
+
+    [auth]
+    disable_login_form = true
+
 type: Opaque

@@ -1,0 +1,27 @@
+apiVersion: v1
+# sum(rate(process_cpu_seconds_total{pod="rabbitns"}[1m])) by (pod)
+data:
+  test.html: |
+    {{template "head" .}}
+    {{template "prom_content_head" .}}
+
+    <h1>Server Metrics</h1>
+
+    <!-- Display server status -->
+    <strong>Server Status:</strong> 
+    <div style="margin-bottom: 20px;">
+        {{ template "prom_query_drilldown" (args "up{pod='rabbitns'}") }}
+    </div>
+
+    <!-- Memory Usage Over Time -->
+    <h2>Memory Usage Over Time</h2>
+    <div class="graph-container" style="margin-bottom: 40px;">
+      src="/graph?g0.expr=process_virtual_memory_bytes%7Bpod%3D%22rabbitns%22%7D&g0.tab=0&g0.stacked=0&g0.range_input=2h" 
+      style="border: none; width: 100%; height: 100px">
+    </div>
+
+    {{template "prom_content_tail" .}}
+    {{template "tail"}}
+kind: ConfigMap
+metadata:
+  name: consoles

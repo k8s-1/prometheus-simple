@@ -1,0 +1,6 @@
+resources:
+  - deploy.yaml
+  - svc.yaml
+  - pod.yaml
+  - ns.yaml
+  - pod-ns.yaml

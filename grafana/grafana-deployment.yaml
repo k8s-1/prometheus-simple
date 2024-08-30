@@ -54,9 +54,9 @@ spec:
         # - mountPath: /tmp
         #   name: tmp-plugins
         #   readOnly: false
-        # - mountPath: /etc/grafana
-        #   name: grafana-config
-        #   readOnly: false
+        - mountPath: /etc/grafana
+          name: grafana-config
+          readOnly: false
       securityContext:
         fsGroup: 65534
         runAsGroup: 65534
@@ -75,6 +75,6 @@ spec:
       # - emptyDir:
       #     medium: Memory
       #   name: tmp-plugins
-      # - name: grafana-config
-      #   secret:
-      #     secretName: grafana-config
+      - name: grafana-config
+        secret:
+          secretName: grafana-config

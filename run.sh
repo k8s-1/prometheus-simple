@@ -35,3 +35,8 @@ echo -e "\e[4m$url/targets\e[0m\n"
 
 printf "\nConsole Templates URL: "
 echo -e "\e[4m$url/consoles/test.html\e[0m\n"
+
+printf "\nGrafana URL: "
+NODE_PORT=$(kubectl get svc grafana -o jsonpath='{.spec.ports[0].nodePort}')
+url="http://${NODE_IP}:${NODE_PORT}"
+echo -e "\e[4m$url/targets\e[0m\n"
